@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config ./proxy.json",
+    "start": "run-p start:*",
+    "start:ng": "ng serve --proxy-config ./proxy.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "server": "./node_modules/.bin/ts-node -P ./server.tsconfig.json ./server.ts"
+    "start:server": "./node_modules/.bin/ts-node -P ./server.tsconfig.json ./server.ts"
   },
   "private": true,
   "dependencies": {
@@ -48,6 +49,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.0",
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "npm-run-all": "^4.1.5",
     "protractor": "~5.4.0",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
